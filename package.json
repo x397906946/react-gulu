@@ -1,10 +1,16 @@
 {
   "name": "react-gulu",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "\"react-gulu\"",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --config webpack.config.dev.js",
+    "build": "webpack -p --config webpack.config.prod.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -16,5 +22,29 @@
   "bugs": {
     "url": "https://github.com/x397906946/react-gulu/issues"
   },
-  "homepage": "https://github.com/x397906946/react-gulu#readme"
+  "homepage": "https://github.com/x397906946/react-gulu#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.4",
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-preset-react-app": "^9.0.0",
+    "cross-env": "^5.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "tslint-react": "^4.0.0",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.5.1",
+    "webpack-html-plugin": "^0.1.1"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "tslint": "^5.17.0",
+    "tslint-loader": "^3.5.4",
+    "typescript": "^3.5.1"
+  }
 }
