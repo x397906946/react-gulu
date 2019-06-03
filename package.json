@@ -1,0 +1,20 @@
+{
+  "name": "react-gulu",
+  "version": "1.0.0",
+  "description": "\"react-gulu\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x397906946/react-gulu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/x397906946/react-gulu/issues"
+  },
+  "homepage": "https://github.com/x397906946/react-gulu#readme"
+}
