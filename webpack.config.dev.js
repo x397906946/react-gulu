@@ -3,7 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = Object.assign({}, base, {
   entry: {
-    example: './example.tsx',
+    index: './lib/index.tsx',
   },
-  plugins: [...base.plugins, new HtmlWebpackPlugin()],
+  plugins: [...base.plugins, new HtmlWebpackPlugin({
+    title: 'React-Gulu',
+    template: 'index.html'
+  })],
 });

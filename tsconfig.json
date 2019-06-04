@@ -20,6 +20,10 @@
     "esModuleInterop": true,
     "noUnusedLocals": true
   },
+  "includes": [
+    "types/**/*",
+    "lib/**/*"
+  ],
   "exclude": [
     "node_modules",
     "build",
