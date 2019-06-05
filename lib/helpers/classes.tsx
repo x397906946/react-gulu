@@ -1,7 +1,5 @@
-const isTruthy = (value: any) => value;
-
 function classes(...names: (string | undefined) []) {
-  return names.filter(isTruthy).join(' ')
+  return names.filter(Boolean).join(' ')
 }
 
 export default classes;
