@@ -3,8 +3,8 @@ import * as ReactDOM from 'react-dom';
 import * as React from 'react';
 
 const fn: React.MouseEventHandler = (e) => {
-  console.log(e.target)
-}
+  console.log(e.target);
+};
 
 ReactDOM.render(<div>
   <Icon name="wechat"
