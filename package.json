@@ -1,11 +1,10 @@
 {
-  "name": "react-gulu",
-  "version": "0.1.0",
+  "name": "react-x-gulu",
+  "version": "0.0.2",
   "description": "\"react-gulu\"",
   "main": "dist/index.js",
   "files": [
-    "dist",
-    "README.md"
+    "/dist/**/*"
   ],
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
