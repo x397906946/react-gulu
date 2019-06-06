@@ -5,5 +5,5 @@ module.exports = Object.assign({}, base, {
   collectCoverageFrom: ["lib/**/*.{ts,tsx}", "!**/node_modules/**"],
   coverageDirectory: 'coverage',
   coverageReporters: ['text', 'lcov'],
-})
+});
 
