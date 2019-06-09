@@ -3,7 +3,7 @@ import './importAllIcons';
 import './icon.scss';
 import classes from '../helpers/classes';
 
-interface IIconProps extends React.SVGAttributes<SVGElement>{
+interface IIconProps extends React.SVGAttributes<SVGElement> {
   name: string;
 }
 
