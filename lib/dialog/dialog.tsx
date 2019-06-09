@@ -1,4 +1,4 @@
-import React, {Fragment, ReactElement, FunctionComponent} from 'react';
+import React, {Fragment, ReactElement, FunctionComponent, ReactNode} from 'react';
 import * as ReactDOM from 'react-dom';
 import {Icon} from '../index';
 import {scopedClassMaker} from '../classes';
@@ -24,7 +24,7 @@ const Dialog: FunctionComponent<IProps> = props => {
       props.onClose(e);
     }
   };
-  const x = props.visible ?
+  const result = props.visible &&
     <Fragment>
       <div className={sc('mask')} onClick={onClickMask}/>
       <div className={sc()}>
@@ -33,34 +33,59 @@ const Dialog: FunctionComponent<IProps> = props => {
         </div>
         <header className={sc('header')}>提示</header>
         <main className={sc('main')}>{props.children}</main>
+        {props.buttons && props.buttons.length > 0 &&
         <footer className={sc('footer')}>
           {props.buttons && props.buttons.map((button, index) =>
             React.cloneElement(button, {key: index})
           )}
         </footer>
+        }
       </div>
-    </Fragment>
-    : null;
-  return ReactDOM.createPortal(x, document.body);
+    </Fragment>;
+  return ReactDOM.createPortal(result, document.body);
 };
-
 Dialog.defaultProps = {
   closeOnClickMsk: false
 };
-const alert = (content: string) => {
-  const component = <Dialog visible={true} onClose={() => {
+const modal = (content: ReactNode, buttons?: Array<ReactElement>, afterClose?: () => void) => {
+  const close = () => {
     ReactDOM.render(React.cloneElement(component, {visible: false}), div);
     ReactDOM.unmountComponentAtNode(div);
     div.remove();
-  }}>{content}</Dialog>;
+  };
+  const component =
+    <Dialog visible={true}
+            buttons={buttons}
+            onClose={() => {
+              close();
+              afterClose && afterClose();
+            }}
+    >{content}</Dialog>;
   const div = document.createElement('div');
   document.body.append(div);
   ReactDOM.render(component, div);
+  return close;
+};
+const confirm = (content: string, yes?: () => void, no?: () => void) => {
+  const onYes = () => {
+    close();
+    yes && yes();
+  };
+  const onNo = () => {
+    close();
+    no && no();
+  };
+  const buttons = [
+    <button onClick={onYes}>yes</button>,
+    <button onClick={onNo}>no</button>
+  ];
+  const close = modal(content, buttons, no);
+};
+const alert = (content: string) => {
+  const button = <button onClick={() => close()}>OK</button>;
+  const close = modal(content, [button]);
 };
 
-const confirm = () => {};
-const modal = () => {};
-
-export {alert};
+export {alert, confirm, modal};
 export default Dialog;
 
