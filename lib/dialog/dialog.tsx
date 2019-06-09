@@ -27,7 +27,7 @@ const Dialog: FunctionComponent<IProps> = props => {
   const result = props.visible &&
     <Fragment>
       <div className={sc('mask')} onClick={onClickMask}/>
-      <div className={sc()}>
+      <div className={sc('')}>
         <div className={sc('close')} onClick={onClickClose}>
           <Icon name="close"/>
         </div>

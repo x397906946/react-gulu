@@ -1,5 +1,3 @@
-import {instanceOf} from 'prop-types';
-
 function classes(...names: (string | undefined) []) {
   return names.filter(Boolean).join(' ');
 }
@@ -14,16 +12,16 @@ interface IClassToggles {
   [K: string]: boolean
 }
 
-function scopedClassMaker(prefix: string) {
-  return (name: string | IClassToggles, options?: IOptions) =>
+const scopedClassMaker = (prefix: string) =>
+  (name: string | IClassToggles, options?: IOptions) =>
     Object
       .entries(name instanceof Object ? name : {[name]: name})
       .filter(kv => kv[1] !== false)
-      .map(kv => kv[0]).map(name => [prefix, name]
-      .filter(Boolean)
-      .join('-'))
+      .map(kv => kv[0])
+      .map(name => [prefix, name]
+        .filter(Boolean)
+        .join('-'))
       .concat(options && options.extra || [])
       .join(' ');
-}
 
 export {scopedClassMaker};

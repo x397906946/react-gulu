@@ -12,7 +12,7 @@ export default function () {
   };
   return (
     <div>
-      <div style={{position: 'relative', zIndex: 10, border: '1px solid red', color: 'red'}}>
+      <div>
         <h1>example 1</h1>
         <button onClick={() => setX(!x)}>click</button>
         <Dialog visible={x} buttons={
@@ -24,7 +24,7 @@ export default function () {
           <strong>hi</strong>
         </Dialog>
       </div>
-      <div style={{position: 'relative', zIndex: 9}}>
+      <div>
         <h1>example 2</h1>
         <button onClick={() => setY(!y)}>click</button>
         <Dialog visible={y} closeOnClickMsk={true} buttons={
