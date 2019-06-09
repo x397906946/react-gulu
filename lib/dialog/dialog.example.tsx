@@ -8,8 +8,8 @@ export default function () {
     const close = modal(<h1>
       hello
       <button onClick={() => close()}>close</button>
-    </h1>)
-  }
+    </h1>);
+  };
   return (
     <div>
       <div style={{position: 'relative', zIndex: 10, border: '1px solid red', color: 'red'}}>
@@ -40,10 +40,11 @@ export default function () {
         <h1>example 3</h1>
         <button onClick={() => alert('1')}>alert</button>
         <button onClick={() => confirm('1', () => {
-          console.log('你点击了yes')
+          console.log('你点击了yes');
         }, () => {
-          console.log('你点击了no')
-        })}>confirm</button>
+          console.log('你点击了no');
+        })}>confirm
+        </button>
       </div>
       <div>
         <h1>example 4</h1>
