@@ -30,6 +30,6 @@ describe('scopedClassMaker', () => {
     expect(sc('x')).toEqual('gu-layout-x');
     expect(sc({y: true, z: false})).toEqual('gu-layout-y');
     expect(sc({y: true, z: true})).toEqual('gu-layout-y gu-layout-z');
-    expect(sc({y: true, z: false}, {extra: 'red'})).toEqual('gu-layout-y gu-layout-z red');
+    expect(sc({y: true, z: false}, {extra: 'red'})).toEqual('gu-layout-y red');
   });
 });

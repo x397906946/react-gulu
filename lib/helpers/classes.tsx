@@ -6,7 +6,7 @@ export default classes;
 
 interface IOptions {
   extra: string | undefined
-}
+ }
 
 interface IClassToggles {
   [K: string]: boolean
