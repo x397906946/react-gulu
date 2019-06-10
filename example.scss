@@ -1,12 +1,15 @@
 * {margin: 0; padding: 0; box-sizing: border-box;}
 *::before {box-sizing: border-box;}
 *::after {box-sizing: border-box;}
-ul ol {list-style: none;}
+ul, ol {list-style: none;}
 h1, h2, h3, h4, h5, h6 {font-weight: normal;}
 a {text-decoration: none; color: inherit;}
 $padding: 16px;
 $main-color: #00adb5;
 $border-color: #eee;
+body {
+  font-size: 16px;
+}
 .site-page {
   background: #ffffff;
 }
@@ -20,7 +23,7 @@ $border-color: #eee;
     padding: 0 $padding;
     display: flex;
     align-items: center;
-    > img {margin-right: 8px;}
+    > img {margin-left: -8px;}
     > span {
       color: $main-color;
       font-size: 32px;
@@ -35,12 +38,19 @@ $border-color: #eee;
     font-size: 18px;
   }
   ul {
-    padding: 0 $padding;
     min-width: 12em;
     > li {
-      padding: 8px 0;
       a {
-        color: $main-color;
+        color: #333;
+        display: block;
+        padding: 8px $padding;
+        &:hover {
+          color: $main-color;
+        }
+        &.active {
+          color: white;
+          background: $main-color;
+        }
       }
     }
   }
