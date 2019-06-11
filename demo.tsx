@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Highlight, {defaultProps} from 'prism-react-renderer'
+import Highlight, {defaultProps} from 'prism-react-renderer';
 
 
 interface IProps {
@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const Demo: React.FunctionComponent<IProps> = props => {
-  const [codeVisible, setCodeVisible] = useState(false)
+  const [codeVisible, setCodeVisible] = useState(false);
   const code = (
     <Highlight {...defaultProps} code={props.code} language="jsx">
       {({className, style, tokens, getLineProps, getTokenProps}) => (
