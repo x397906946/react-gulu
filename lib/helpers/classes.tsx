@@ -1,15 +1,15 @@
-function classes(...names: (string | undefined) []) {
+function classes(...names: Array<string | undefined>) {
   return names.filter(Boolean).join(' ');
 }
 
 export default classes;
 
 interface IOptions {
-  extra: string | undefined
- }
+  extra: string | undefined;
+}
 
 interface IClassToggles {
-  [K: string]: boolean
+  [K: string]: boolean;
 }
 
 const scopedClassMaker = (prefix: string) =>

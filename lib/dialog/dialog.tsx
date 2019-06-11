@@ -4,12 +4,11 @@ import {Icon} from '../index';
 import {scopedClassMaker} from '../helpers/classes';
 import './dialog.scss';
 
-
 interface IProps {
-  visible: boolean
-  buttons?: Array<ReactElement>
-  onClose: React.MouseEventHandler
-  closeOnClickMsk?: boolean
+  visible: boolean;
+  buttons?: ReactElement[];
+  onClose: React.MouseEventHandler;
+  closeOnClickMsk?: boolean;
 }
 
 const scopedClass = scopedClassMaker('x-dialog');
@@ -47,7 +46,7 @@ const Dialog: FunctionComponent<IProps> = props => {
 Dialog.defaultProps = {
   closeOnClickMsk: false
 };
-const modal = (content: ReactNode, buttons?: Array<ReactElement>, afterClose?: () => void) => {
+const modal = (content: ReactNode, buttons?: ReactElement[], afterClose?: () => void) => {
   const close = () => {
     ReactDOM.render(React.cloneElement(component, {visible: false}), div);
     ReactDOM.unmountComponentAtNode(div);
@@ -88,4 +87,3 @@ const alert = (content: string) => {
 
 export {alert, confirm, modal};
 export default Dialog;
-

@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import Highlight, {defaultProps} from 'prism-react-renderer';
 
-
 interface IProps {
-  code: string
+  code: string;
 }
 
 const Demo: React.FunctionComponent<IProps> = props => {
